@@ -51,7 +51,6 @@ contract SecureStorage {
         bytes32 r,
         bytes32 s
     ) public view returns (bool) {
-        // Считаем хэш сообщения
         bytes32 messageHash = keccak256(abi.encodePacked(message));
 
         // Шаг 1: берем messageHash, конкатинируем с префиксом: "\x19Ethereum Signed Message:\n32" + messageHash...
